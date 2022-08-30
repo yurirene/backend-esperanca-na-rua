@@ -62,7 +62,11 @@
             let lng = $(this).data('longitude');
             var marker = L.marker([lat, lng],{}).addTo(map);
             map.setView([lat, lng], 15);
-        })
+        });
+
+        window.livewire.on('infoSolicitacao', () => {
+            $('#modal-info-solicitacao').modal('show');
+        });
     })
    
 </script>

@@ -18,7 +18,8 @@
 
                     @include('livewire.actions.solicitacao-action', [
                         'latitude' => $solicitacao->geo_lat,
-                        'longitude' => $solicitacao->geo_lon
+                        'longitude' => $solicitacao->geo_lon,
+                        'id' => $solicitacao->id
                     ])
                 </td>
                 <td class="align-middle text-center">
@@ -50,3 +51,4 @@
         </tbody>
     </table>
 </div>
+@livewire('modal-informacao-solicitacao')
