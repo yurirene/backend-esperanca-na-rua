@@ -16,22 +16,21 @@ class CreateMoradorRuasTable extends Migration
         Schema::create('morador_ruas', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome')->nullable();
-            $table->tinyInteger('tipo_destino')->nullable();
             $table->boolean('tem_documento')->default(false);
             $table->string('tipo_documento')->nullable();
             $table->string('numero_documento')->nullable();
             $table->string('doenca_atual')->nullable();
-            $table->boolean('passagem_policia')->nullable();
             $table->char('genero')->nullable();
             $table->string('faixa_idade')->nullable();
-            $table->integer('tempo_rua')->nullable();
-            $table->string('geo_lat')->nullable();
-            $table->string('geo_lon')->nullable();
+            $table->string('tempo_rua')->nullable();
             $table->boolean('aceita_foto')->nullable();
             $table->json('condicao_fisica')->nullable();
             $table->string('path_foto')->nullable();
             $table->boolean('deseja_ajuda')->nullable();
+            $table->bigInteger('passagem_policia_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('passagem_policia_id')->references('id')->on('passagem_policias');
         });
     }
 

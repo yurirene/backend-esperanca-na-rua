@@ -10,7 +10,7 @@
 @section('content')
     @include('dashboard.cards')
     <div class="row mt-4">
-        <div class="col-md-12 mb-lg-0 mb-4">
+        <div class="col-md-7 mb-lg-0 mb-4">
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
@@ -22,12 +22,24 @@
                 </div>
             </div>
         </div>
+        <div class="col-5">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h6>Solicitações</h6>
+                </div>
+                <div class="card-body">
+                    @livewire('solicitacoes')
+                </div>
+            </div>
+        </div>
     </div>
 @stop
 
 @push('js')
 <script>
     $(document).ready(function() {
+
+
         
         var map = L.map('map', {doubleClickZoom: false}).locate({setView: true, maxZoom: 16});
         if (navigator.geolocation) {
@@ -44,6 +56,13 @@
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
+
+        $('.solicitacao_mapa').on('click', function(){
+            let lat = $(this).data('latitude');
+            let lng = $(this).data('longitude');
+            var marker = L.marker([lat, lng],{}).addTo(map);
+            map.setView([lat, lng], 15);
+        })
     })
    
 </script>

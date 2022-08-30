@@ -2,8 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
-use App\Models\Users;
+use App\Models\MoradorRua;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
@@ -21,17 +20,17 @@ class MoradorRuaDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query);
-            // ->addColumn('action', 'usersdatatable.action');
+            ->eloquent($query)
+            ->addColumn('action', 'MoradorRuasdatatable.action');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\User $model
+     * @param \App\Models\MoradorRua $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(MoradorRua $model)
     {
         return $model->newQuery();
     }
@@ -49,13 +48,9 @@ class MoradorRuaDataTable extends DataTable
                     ->minifiedAjax()
                     ->dom('Bfrtip')
                     ->orderBy(1)
-                    ->buttons(
-                        Button::make('create'),
-                        Button::make('export'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    );
+                    ->parameters([
+                        'buttons' => []
+                    ]);
     }
 
     /**

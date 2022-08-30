@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações (Hoje)</p>
                             <h5 class="font-weight-bolder mb-0">
                                 $53,000
                                 <span class="text-success text-sm font-weight-bolder">+55%</span>
@@ -21,13 +21,13 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações Atendidas</p>
                             <h5 class="font-weight-bolder mb-0">
                                 2,300
                                 <span class="text-success text-sm font-weight-bolder">+3%</span>
@@ -43,13 +43,13 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações em Aberto</p>
                             <h5 class="font-weight-bolder mb-0">
                                 +3,462
                                 <span class="text-danger text-sm font-weight-bolder">-2%</span>
@@ -65,6 +65,8 @@
             </div>
         </div>
     </div>
+
+    {{-- 
     <div class="col-xl-3 col-sm-6">
         <div class="card">
             <div class="card-body p-3">
@@ -86,5 +88,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

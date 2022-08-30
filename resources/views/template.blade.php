@@ -48,7 +48,16 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
     <style>
         #map { height: 600px; }
+        .paginate_button.page-item.previous a,
+        .paginate_button.page-item.next a {
+            width: 100px;
+            margin-right: 20px;
+            margin-left: 20px;
+            border-radius: 10px !important;
+        }
     </style>
+
+    @livewireStyles
 
 </head>
 
@@ -187,6 +196,17 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.2/b-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.js"></script>
     <script src="/vendor/datatables/buttons.server-side.js"></script>
     
+    <!-- SCRIPT PARA DROPDOWN EM TABELAS -->
+    <script>
+        $('.table-responsive').on('show.bs.dropdown', function () {
+            $('.table-responsive').css( "overflow", "inherit" );
+        });
+
+        $('.table-responsive').on('hide.bs.dropdown', function () {
+            $('.table-responsive').css( "overflow", "auto" );
+        })
+    </script>
+   
     <script>
         $(function(){
 
@@ -222,10 +242,9 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
-   
 
     @stack('js')
-    
+    @livewireScripts
     
 </body>
 
