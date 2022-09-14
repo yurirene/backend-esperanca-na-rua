@@ -7,8 +7,9 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações (Hoje)</p>
                             <h5 class="font-weight-bolder mb-0">
-                                $53,000
-                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                0
+                                {{-- $53,000
+                                <span class="text-success text-sm font-weight-bolder">+55%</span> --}}
                             </h5>
                         </div>
                     </div>
@@ -29,8 +30,9 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações Atendidas</p>
                             <h5 class="font-weight-bolder mb-0">
-                                2,300
-                                <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                0
+                                {{-- 2,300
+                                <span class="text-success text-sm font-weight-bolder">+3%</span> --}}
                             </h5>
                         </div>
                     </div>
@@ -51,8 +53,9 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações em Aberto</p>
                             <h5 class="font-weight-bolder mb-0">
-                                +3,462
-                                <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                0
+                                {{-- +3,462
+                                <span class="text-danger text-sm font-weight-bolder">-2%</span> --}}
                             </h5>
                         </div>
                     </div>
@@ -66,7 +69,7 @@
         </div>
     </div>
 
-    {{-- 
+    {{--
     <div class="col-xl-3 col-sm-6">
         <div class="card">
             <div class="card-body p-3">

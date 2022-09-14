@@ -24,7 +24,7 @@
                                         <h6 class="mb-0">Nome</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{ $solicitacao->morador->nome }}
+                                        {{ $solicitacao ? $solicitacao ? $solicitacao->morador->nome : null : null }}
                                     </div>
                                 </div>
                                 <hr>
@@ -33,7 +33,7 @@
                                         <h6 class="mb-0">Gênero</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{$solicitacao->morador->genero == 'M' ? 'Masculino' : 'Feminino'}} 
+                                        {{$solicitacao ? $solicitacao->morador->genero : null == 'M' ? 'Masculino' : 'Feminino'}}
                                     </div>
                                 </div>
                                 <hr>
@@ -42,7 +42,7 @@
                                         <h6 class="mb-0">Faixa Etária</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{$solicitacao->morador->faixa_idade}} 
+                                        {{$solicitacao ? $solicitacao->morador->faixa_idade : null}}
                                     </div>
                                 </div>
                                 <hr>
@@ -51,7 +51,7 @@
                                         <h6 class="mb-0">Tempo de Rua</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{$solicitacao->morador->tempo_rua ?? 'Não Informado'}} 
+                                        {{$solicitacao ? $solicitacao->morador->tempo_rua : null ?? 'Não Informado'}}
                                     </div>
                                 </div>
                                 <hr>
@@ -60,7 +60,7 @@
                                         <h6 class="mb-0">Passagem pela Polícia</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{$solicitacao->morador->passagemPolicia->descricao}} 
+                                        {{ ($solicitacao && $solicitacao->morador->passagemPolicia) ? $solicitacao->morador->passagemPolicia->descricao  : null}}
                                     </div>
                                 </div>
                                 <hr>
@@ -69,20 +69,20 @@
                                         <h6 class="mb-0">Tem documento? Se sim, qual?</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{ $solicitacao->morador->tem_documento ? 'Sim, ' : 'Não' }}
-                                        {{ $solicitacao->morador->tem_documento ? ($solicitacao->morador->tipo_documento . ': ' . $solicitacao->morador->numero_documento) : ''  }}
+                                        {{ $solicitacao ? ($solicitacao->morador->tem_documento  ? 'Sim, ' : 'Não') : null }}
+                                        {{ $solicitacao ? ($solicitacao->morador->tem_documento ? ($solicitacao ? $solicitacao->morador->tipo_documento : null) : null  . ': ' . $solicitacao ? $solicitacao->morador->numero_documento : null) : ''  }}
                                     </div>
                                 </div>
                                 <hr>
-                                
+
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Condição Física</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        @if(!is_null($solicitacao->morador->condicao_fisica))
-                                            @foreach ($solicitacao->morador->condicao_fisica as $condicao) 
-                                                <span class="badge bg-gradient-info">{{ $condicao }}</span>
+                                        @if(!is_null($solicitacao ? $solicitacao->morador->condicao_fisica : null))
+                                            @foreach ($solicitacao->morador->condicao_fisica as $key => $condicao)
+                                                <span class="badge bg-gradient-info">{{ $key }} : {{ $condicao }}</span>
                                             @endforeach
                                         @else
                                             <span class="badge bg-gradient-info">Sem Informação</span>
@@ -95,15 +95,15 @@
                                         <h6 class="mb-0">Doença Atual</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{ $solicitacao->morador->doenca_atual ?? 'Não Informado' }}
+                                        {{ $solicitacao ? ($solicitacao->morador->doenca_atual ?? 'Não Informado' ) : null }}
                                     </div>
                                 </div>
                                 <hr>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

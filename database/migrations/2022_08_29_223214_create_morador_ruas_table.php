@@ -27,7 +27,7 @@ class CreateMoradorRuasTable extends Migration
             $table->json('condicao_fisica')->nullable();
             $table->string('path_foto')->nullable();
             $table->boolean('deseja_ajuda')->nullable();
-            $table->bigInteger('passagem_policia_id')->unsigned();
+            $table->bigInteger('passagem_policia_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('passagem_policia_id')->references('id')->on('passagem_policias');

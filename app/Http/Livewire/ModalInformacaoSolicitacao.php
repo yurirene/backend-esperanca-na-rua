@@ -10,15 +10,15 @@ class ModalInformacaoSolicitacao extends Component
     public $solicitacao;
 
     protected $listeners = ['infoSolicitacao'];
-  
+
     public function mount()
     {
       $this->solicitacao = Solicitacao::first();
     }
-    
+
      public function infoSolicitacao($solicitacaoId)
      {
-         $this->solicitacao = Solicitacao::find($solicitacaoId); 
+         $this->solicitacao = Solicitacao::find($solicitacaoId);
      }
 
     public function render()

@@ -17,16 +17,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/users', [App\Http\Controllers\HomeController::class, 'usuarios'])->name('usuarios');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/users', [App\Http\Controllers\HomeController::class, 'usuarios'])->name('usuarios');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-    Route::get('/moradores-de-rua', [MoradorRuaController::class, 'index'])->name('morador-rua.index');
-});
+Route::get('/home', [DashboardController::class, 'index'])->name('dashboard.index');
+
+Route::get('/moradores-de-rua', [MoradorRuaController::class, 'index'])->name('morador-rua.index');
+
+// Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+//     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+//     Route::get('/moradores-de-rua', [MoradorRuaController::class, 'index'])->name('morador-rua.index');
+// });
