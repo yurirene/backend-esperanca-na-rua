@@ -31,14 +31,22 @@ class SolicitacaoService
             return Solicitacao::create([
                 'morador_rua_id' => $morador_rua->id,
                 'status_solicitacao_id' => StatusSolicitacao::where('nome', 'aberto')->first()->id,
-                'tipo_destino_id' => TipoDestino::where('nome', $request['tipo_destino'])->first()->id,
+                'tipo_destino_id' => TipoDestino::where('descricao', $request['tipo_destino'])->first()->id,
                 'solicitante_id' => User::first()->id,
                 'geo_lat' => $request['latitude'],
                 'geo_lon' => $request['longitude']
             ]);
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th->getMessage());
+            throw $th;
+        }
+    }
+
+    public static function getTiposAtendimentos()
+    {
+        try {
+            return TipoDestino::all()->pluck('descricao', 'nome')->toArray();
+        } catch (\Throwable $th) {
             throw $th;
         }
     }

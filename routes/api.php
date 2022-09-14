@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('solicitacao', [SolicitacaoController::class, 'store']);
+Route::get('tipos-atendimentos', [SolicitacaoController::class, 'getTiposAtendimentos']);

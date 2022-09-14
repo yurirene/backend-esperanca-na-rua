@@ -16,4 +16,13 @@ class SolicitacaoController extends Controller
             return response()->json(['message' => $th->getMessage(), 'status' => false], 500);
         }
     }
+
+    public function getTiposAtendimentos()
+    {
+        try {
+            return response()->json(SolicitacaoService::getTiposAtendimentos(), 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $th->getMessage(), 'status' => false], 500);
+        }
+    }
 }
