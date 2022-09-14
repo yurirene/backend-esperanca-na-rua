@@ -1,4 +1,4 @@
-<div class="table-responsive p-0"  wire:poll.10000ms>
+<div class="table-responsive p-0"  wire:poll.5000ms>
     <table class="table align-items-center mb-0" id="tabela-solicitacoes">
         <thead>
             <tr>

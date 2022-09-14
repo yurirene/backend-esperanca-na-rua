@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('solicitacao', [SolicitacaoController::class, 'store']);
+Route::post('solicitacao', [SolicitacaoController::class, 'store'])->middleware(['throttle:1,1']);
 Route::get('tipos-atendimentos', [SolicitacaoController::class, 'getTiposAtendimentos']);
