@@ -1,0 +1,144 @@
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 22px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+.btdrp {
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(10px, -172px, 0px);
+}
+.dt-buttons.btn-group > .btn-secondary {
+    border-radius: 5px;
+}
+.btn {
+    border-radius: 8px !important;
+}
+
+
+
+.pulse-success {
+    animation: pulse-success 2s infinite;
+}
+
+@keyframes pulse-success {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+    }
+}
+
+.pulse-danger {
+    animation: pulse-danger 2s infinite;
+}
+
+@keyframes pulse-danger {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+}
+
+#tracking {
+    height: 400px;
+    overflow-y: auto;
+}
+[class*=tracking-status-] p {
+    margin:0;
+    font-size:1.1rem;
+    color:#fff;
+    text-transform:uppercase;
+    text-align:center
+}
+[class*=tracking-status-] {
+    padding:1.6rem 0
+}
+
+.tracking-list {
+    border:1px solid #e5e5e5
+}
+.tracking-item {
+    border-left:1px solid #e5e5e5;
+    position:relative;
+    padding:2rem 1.5rem .5rem 2.5rem;
+    font-size:.9rem;
+    margin-left:3rem;
+    min-height:5rem
+}
+.tracking-item:last-child {
+    padding-bottom:4rem
+}
+.tracking-item .tracking-date {
+    margin-bottom:.5rem
+}
+.tracking-item .tracking-date span {
+    color:#888;
+    font-size:85%;
+    padding-left:.4rem
+}
+.tracking-item .tracking-content {
+    padding:.5rem .8rem;
+    background-color:#f4f4f4;
+    border-radius:.5rem
+}
+.tracking-item .tracking-content span {
+    display:block;
+    color:#888;
+    font-size:85%
+}
+.tracking-item .tracking-icon {
+    line-height:2.6rem;
+    position:absolute;
+    left:-1.3rem;
+    width:2.6rem;
+    height:2.6rem;
+    text-align:center;
+    border-radius:50%;
+    font-size:1.1rem;
+    background-color:#fff;
+    color:#fff
+}
+
+.tracking-item .tracking-icon.status-intransit {
+    color:#e5e5e5;
+    border:1px solid #e5e5e5;
+    font-size: 1rem
+}

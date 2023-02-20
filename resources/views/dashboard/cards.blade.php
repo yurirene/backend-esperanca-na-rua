@@ -1,95 +1,60 @@
-<div class="row">
-    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações (Hoje)</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                0
-                                {{-- $53,000
-                                <span class="text-success text-sm font-weight-bolder">+55%</span> --}}
-                            </h5>
-                        </div>
+<div class="card-group">
+    <div class="card border-right  m-1">
+        <div class="card-body">
+            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                <div>
+                    <div class="d-inline-flex align-items-center">
+                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">30 dias</span>
                     </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Solicitações</h6>
+                </div>
+                <div class="ml-auto mt-md-3 mt-lg-0">
+                    <span class="opacity-7 text-muted"><em data-feather="hash"></em></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações Atendidas</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                0
-                                {{-- 2,300
-                                <span class="text-success text-sm font-weight-bolder">+3%</span> --}}
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
+    <div class="card border-right  m-1">
+        <div class="card-body">
+            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                <div>
+                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">0</h2>
+                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Solicitações Hoje
+                    </h6>
+                </div>
+                <div class="ml-auto mt-md-3 mt-lg-0">
+                    <span class="opacity-7 text-muted"><em data-feather="alert-circle"></em></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Solicitações em Aberto</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                0
-                                {{-- +3,462
-                                <span class="text-danger text-sm font-weight-bolder">-2%</span> --}}
-                            </h5>
-                        </div>
+    <div class="card border-right  m-1">
+        <div class="card-body">
+            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                <div>
+                    <div class="d-inline-flex align-items-center">
+                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
                     </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Solicitações em Aberto</h6>
+                </div>
+                <div class="ml-auto mt-md-3 mt-lg-0">
+                    <span class="opacity-7 text-muted"><em data-feather="alert-triangle"></em></span>
                 </div>
             </div>
         </div>
     </div>
-
-    {{--
-    <div class="col-xl-3 col-sm-6">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                $103,430
-                                <span class="text-success text-sm font-weight-bolder">+5%</span>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
+    <div class="card  m-1">
+        <div class="card-body">
+            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                <div>
+                    <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Parceiros Online</h6>
+                </div>
+                <div class="ml-auto mt-md-3 mt-lg-0">
+                    <span class="opacity-7 text-muted"><em data-feather="globe"></em><emspan>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 </div>

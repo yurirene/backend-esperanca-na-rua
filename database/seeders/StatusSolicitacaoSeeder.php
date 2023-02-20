@@ -7,29 +7,7 @@ use Illuminate\Database\Seeder;
 
 class StatusSolicitacaoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.    const STATUS = [
-        self::ABERTO => 'Aberto',
-        self::EM_ATENDIMENTO => 'Em Atendimento',
-        self::ENCONTRADO => 'Encontrado',
-        self::ENCAMINHADO => 'Encaminhado',
-        self::CANCELADO => 'Cancelado',
-        self::NAO_ENCONTRADO => 'Não Encontrado',
-    ];
 
-    const LABEL = [
-        self::ABERTO => 'danger',
-        self::EM_ATENDIMENTO => 'warning',
-        self::ENCONTRADO => 'info',
-        self::ENCAMINHADO => 'success',
-        self::CANCELADO => 'dark',
-        self::NAO_ENCONTRADO => 'dark',
-    ];
-
-
-     *
-     * @return void
-     */
     public function run()
     {
         $status = [
@@ -73,10 +51,24 @@ class StatusSolicitacaoSeeder extends Seeder
                 'nome' => 'nao-encontrado',
                 'color' => 'black'
             ],
+
+            [
+                'id' => 7,
+                'descricao' => 'Encerrado - Atendido',
+                'nome' => 'encerrado-atendido',
+                'color' => 'success'
+            ],
+
+            [
+                'id' => 8,
+                'descricao' => 'Encerrado - Desistência',
+                'nome' => 'encerrado-desistencia',
+                'color' => 'danger'
+            ],
         ];
 
         foreach ($status as $status) {
-            StatusSolicitacao::updateOrCreate(['id' => $status['id']],$status);
+            StatusSolicitacao::updateOrCreate(['id' => $status['id']], $status);
         }
     }
 }

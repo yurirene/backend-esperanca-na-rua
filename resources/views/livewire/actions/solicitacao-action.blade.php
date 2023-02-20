@@ -1,18 +1,23 @@
-<div class="dropdown">
-    <a href="javascript:;" class="btn bg-gradient-dark dropdown-toggle btn-sm px-1 py-1" data-bs-toggle="dropdown" id="action-solicitacoes">
+<div class="dropdown mr-1 show">
+    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle btn-rounded"
+        id="menuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="true"
+    >
         Ações
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="action-solicitacoes">
-        <li>
-            <a class="dropdown-item solicitacao_mapa" href="javascript:;" data-latitude="{{$latitude}}" data-longitude="{{$longitude}}" >
-                <i class="fas fa-map"></i> Ver no Mapa
-            </a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="javascript:;"  wire:click="$emit('infoSolicitacao', '{{$id}}')" >
-                <i class="fas fa-info"></i> Informações
-            </a>
-        </li>
-        
-    </ul>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="menuButton"
+    x-placement="top-start"
+    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(10px, -172px, 0px);"
+    >
+        <a class="dropdown-item solicitacao_mapa" href="javascript:;"
+            data-latitude="{{$latitude}}" data-longitude="{{$longitude}}"
+        >
+            <em class="fas fa-map"></em> Ver no Mapa
+        </a>
+        <a class="dropdown-item" href="javascript:;"
+            wire:click="$emit('infoSolicitacao', '{{$id}}')"
+        >
+            <em class="fas fa-info"></em> Informações
+        </a>
+    </div>
 </div>

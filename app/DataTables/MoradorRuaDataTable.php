@@ -21,7 +21,19 @@ class MoradorRuaDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'MoradorRuasdatatable.action');
+            ->addColumn('action', function ($sql) {
+                return view('morador-rua.action', [
+                    'deletar' => auth()->user()->can('menu', 'morador-rua.delete'),
+                    'visualizar' => true,
+                    'id' => $sql->id
+                ])->render();
+            })
+            ->editColumn('genero', function ($sql) {
+                return $sql->genero == 'M' ? 'Masculino' : 'Feminino';
+            })
+            ->editColumn('created_at', function ($sql) {
+                return $sql->created_at->format('d/m/Y H:i:s');
+            });
     }
 
     /**
@@ -47,9 +59,17 @@ class MoradorRuaDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(5)
                     ->parameters([
-                        'buttons' => []
+                        "language" => [
+                            "url" => "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+                        ],
+                        'buttons' => [
+                            [
+                                'action' => 'excel',
+                                'text' => '<em class="fas fa-file-excel"></em> Exportar para Excel'
+                            ]
+                        ]
                     ]);
     }
 
@@ -65,11 +85,14 @@ class MoradorRuaDataTable extends DataTable
                   ->exportable(false)
                   ->printable(false)
                   ->width(60)
-                  ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('nome'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+                  ->addClass('text-center')
+                  ->title('Ações'),
+            Column::make('nome')->title('Nome'),
+            Column::make('genero')->title('Gênero'),
+            Column::make('faixa_etaria')->title('Faixa Etária'),
+            Column::make('tempo_rua')->title('Tempo de Rua'),
+            Column::make('passagem_policia')->title('Passagem pela Policia'),
+            Column::make('created_at')->title('Criado em'),
         ];
     }
 

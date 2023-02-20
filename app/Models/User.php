@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'perfil_id',
     ];
 
     /**
@@ -42,4 +43,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relacionamento com Parceiro::class
+     *
+     * @return void
+     */
+    public function parceiros()
+    {
+        return $this->belongsToMany(Parceiro::class, 'parceiros_usuarios');
+    }
+
+    /**
+     * Relacionamento com Perfil::class
+     *
+     * @return void
+     */
+    public function perfil()
+    {
+        return $this->belongsTo(Perfil::class);
+    }
 }

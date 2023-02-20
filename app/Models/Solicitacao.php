@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\GenericTrait;
 use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Solicitacao extends Model
 {
-    use Uuid;
+    use GenericTrait;
 
     protected $table = 'solicitacaos';
     protected $guarded = ['id', 'created_at', 'updated_at'];
@@ -31,7 +32,7 @@ class Solicitacao extends Model
 
     public function getStatusFormatadoAttribute()
     {
-        return '<span class="badge badge-sm bg-gradient-' . $this->status->color . '">' . $this->status->descricao . '</span>';
+        return '<span class="badge badge-pill badge-' . $this->status->color . '">' . $this->status->descricao . '</span>';
     }
 
     public function getCriadoEmAttribute()
@@ -52,7 +53,7 @@ class Solicitacao extends Model
     {
         return $this->belongsTo(User::class,'solicitante_id');
     }
-    
+
     public function atendente()
     {
         return $this->belongsTo(User::class,'atendente_id');

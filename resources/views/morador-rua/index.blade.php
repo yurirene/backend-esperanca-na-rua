@@ -1,13 +1,13 @@
 
-@extends('template')
+@extends('layouts.template')
 
-@section('title', 'Moradores de Rua')
+@section('cabecalho', 'Moradores de Rua')
 
 @section('header')
 Moradores de Rua
 @stop
 
-@section('content')
+@section('conteudo')
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
